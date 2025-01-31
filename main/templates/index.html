@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Query</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+    <!-- Form to collect user input -->
+    <form onsubmit="submitForm(event)">
+        <label for="query">Enter your query:</label>
+        <input type="text" id="query" name="query" required>
+        <input type="submit" value="Submit Query">
+    </form>
+
+    <div id="loading-indicator" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- URL Display -->
+    <div id="url-container">
+        <!-- URL will appear here -->
+    </div>
+
+    <!-- Missing Keys Display -->
+    <div id="missing-keys-container">
+        <!-- Missing keys will appear here -->
+    </div>
+
+    <!-- Container for dynamically generated fields -->
+    <div id="dynamic-fields-container">
+        <!-- New fields will be inserted here -->
+    </div>
+
+    <!-- Response Container: Divided into API Response and Summary -->
+    <div id="response-container">
+        <div id="api-response" class="response-section">
+            <div id="api-response-content"></div>
+        </div>
+        <div id="summary-container" class="response-section">
+            <div id="summary-response-content"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+Endpoint Name: Get Assigned Tickets
+Endpoint URL: https://amt-gcp-dev.soham.ai/inventory-task/v1/get_assigned_tickets
+Description: This endpoint allows you to retrieve tickets assigned to a user.
+Payload:
+page: The page number for pagination(set default to 1)
+limit: The number of tickets to retrieve per page(set default to 10).
+assignee_id: The email ID of the employee to whom the tickets are assigned.
+entity_id: The unique identifier for the entity related to the ticket(default 2c376b86-ec69-43c6-801a-bc4160ab8617).
+status: The status of the tickets to filter(default Assigned)
+
+Endpoint Name: Get Requested Tickets
+Endpoint URL: https://amt-gcp-dev.soham.ai/inventory-task/v1/get_requested_tickets
+Description: This endpoint allows you to retrieve tickets requested by an employee. It is used for non-tech-related issues like electronics or office-related items.
+Payload:
+page: The page number for pagination(set default to 1)
+limit: The number of tickets to retrieve per page(set default to 10).
+requested_by: The email ID of the employee who requested the tickets.
+entity_id: The unique identifier for the entity related to the ticket(default 2c376b86-ec69-43c6-801a-bc4160ab8617).
+status: The status of the tickets to filter(default Assigned).
+
+Endpoint Name: Create Tickets
+Endpoint URL: https://amt-gcp-dev.soham.ai/inventory-task/v1/create_task
+Description: This endpoint is used to create a ticket for non-tech-related issues like electronics or office-related items. It assigns the ticket to a specific team or person and includes optional proof files for reference.
+Payload:
+title: The title or summary of the task.
+entity_id: The unique identifier for the entity related to the task(default 2c376b86-ec69-43c6-801a-bc4160ab8617).
+requested_by: The email ID of the requester.
+requestor_name: The name of the person requesting the task.
+category: The category to which the task belongs.
+category_id: The unique identifier for the category.
+message: A detailed description of the task.
+status: The initial status of the task(default Assigned)..
+assigned_to: The email ID of the person or team the task is assigned to.
+assignee_name: The name of the person or team the task is assigned to.
+assigned_by: The email ID of the assigner.
+assigner_name: The name of the person assigning the task.
+action: The action associated with the ticket.
+sub_category: The sub-category under which the task falls.
+sub_category_id: The unique identifier for the sub-category.
+
+Endpoint Name: Get Ticket Details
+Endpoint URL: https://amt-gcp-dev.soham.ai/inventory-task/v1/get_ticket_details
+Description: This endpoint retrieves details of a specific ticket, including task logs that track every status change until the ticket is closed.
+Payload:
+id: The unique identifier of the ticket.
+entity_id: The unique identifier for the entity related to the ticket(default 2c376b86-ec69-43c6-801a-bc4160ab8617).
+
+Endpoint Name: Get All Tickets
+Endpoint URL: https://amt-gcp-dev.soham.ai/inventory-task/v1/get_all_tickets
+Description: This endpoint retrieves the details of all tickets available in the system, including their metadata, status, and associated information.
+Payload:
+entity_id: The unique identifier for the entity related to the tickets(default 2c376b86-ec69-43c6-801a-bc4160ab8617).
+
+Endpoint Name: Get All Ticket Categories
+Endpoint URL: https://amt-gcp-dev.soham.ai/inventory-task/v1/get_ticket_categories
+Description: This endpoint retrieves a list of all ticket categories associated with a specified entity. Each ticket category provides information about the classification or type of tickets available for the entity.
+Payload:
+entity_id: The unique identifier for the entity related to the ticket(default 2c376b86-ec69-43c6-801a-bc4160ab8617).
+
+Endpoint Name: Get All Ticket Subcategories
+Endpoint URL: https://amt-gcp-dev.soham.ai/inventory-task/v1/get_ticket_sub_categories
+Description: This endpoint retrieves a list of all ticket subcategories associated with a particular ID, task category, and entity. Subcategories provide a more detailed classification of tickets under a broader category.
+Payload:
+task_category_id: The unique identifier of the task category.
+entity_id: The unique identifier of the entity associated with the ticket subcategories(default 2c376b86-ec69-43c6-801a-bc4160ab8617).
